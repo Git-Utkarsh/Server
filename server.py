@@ -1,3 +1,5 @@
+# To remove the netstat configuration on port 5555
+# fuser -k 5555/tcp
 import socket
 import json
 import termcolor
