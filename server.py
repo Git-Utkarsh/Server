@@ -1,3 +1,4 @@
+# fuser -k 5555/tcp
 import socket
 import json
 import termcolor
