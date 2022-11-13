@@ -213,6 +213,8 @@ while True:
         os.system('clear')
     elif command == 'cls':
         os.system('cls')
+    elif command == 'terminate':
+        exit()
     elif command == 'help':
         print(termcolor.colored("""
 ===============================================================
@@ -223,6 +225,7 @@ sendall             -->  Send command to all targets
 kill                -->  kill a session
 exit                -->  Exit the commandandcontrol      
 cls                 -->  clear terminal [WINDOWS]
+terminate           -->  Exit the shell forcefully
 ===============================================================
         """,'yellow'))
     elif command[:7] == 'session':
